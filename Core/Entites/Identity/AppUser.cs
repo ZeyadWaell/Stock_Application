@@ -14,5 +14,7 @@ namespace Core.Entites.Identity
 
         public Address Address { get; set; }
 
+        public  virtual ICollection<StockHolder> Holders { get; set; }
+
     }
 }

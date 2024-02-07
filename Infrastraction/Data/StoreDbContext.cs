@@ -20,12 +20,9 @@ namespace Infrastraction.Data
         {
 
         }
-        public DbSet<Product> Products { get; set; }
-        public DbSet<ProductBrand> Brands { get; set; }
-        public DbSet<ProductType> ProductTypes { get; set; }
-        public DbSet<Order> Orders { get; set; }
-        public DbSet<OrderItem> OrderItems { get; set; }
-        public DbSet<DeliverMethod> DeliverMethods { get; set; }
+        public DbSet<Stock> Stocks { get; set; }
+        public DbSet<StockHolder> StocksHolder { get; set;}
+        public DbSet<Orders> Orders { get; set; }
 
     }
 }

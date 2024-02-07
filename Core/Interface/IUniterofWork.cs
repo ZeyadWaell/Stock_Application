@@ -9,7 +9,10 @@ namespace Core.Interface
 {
     public interface IUniterofWork
     {
-        IGenericRepostory<TEntity> Repostory<TEntity>() where TEntity : BaseEntity;
+        IOrderRepostory OrderRepostory { get; }
+        IStockRepository StockRepository { get; }
+
+        IStockHolderRepostory StockHolderRepostory { get; }
         Task<int> Complete();
     }
 }

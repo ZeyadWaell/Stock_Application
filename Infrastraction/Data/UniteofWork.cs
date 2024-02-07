@@ -1,5 +1,8 @@
 ﻿using Core.Entites;
 using Core.Interface;
+using Infrastraction.Identity;
+using Infrastraction.Services;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -12,32 +15,31 @@ namespace Infrastraction.Data
     public class UniteofWork : IUniterofWork
     {
         private readonly StoreDbContext _db;
-        private Hashtable _repostory;
-
         public UniteofWork(StoreDbContext db)
         {
-            _db = db;
+           _db = db;
         }
+        public StoreDbContext StoreDbContext { get; }
+        #region private regon
+        private IOrderRepostory orderRepostory;
+
+        private IStockRepository stockRepostory;
+
+        private IStockHolderRepostory stockHolderRepostory;
+
+        #endregion
+
+        #region public region
+        public IOrderRepostory OrderRepostory => orderRepostory ??= new OrderRepostory(StoreDbContext);
+
+        public IStockRepository StockRepository => stockRepostory ??= new StockRepository(StoreDbContext);
+
+        public IStockHolderRepostory StockHolderRepostory => stockHolderRepostory ??= new StockHolderRepostory(StoreDbContext);
+
+        #endregion
 
         public async Task<int> Complete()
       =>await _db.SaveChangesAsync();
 
-        public IGenericRepostory<TEntity> Repostory<TEntity>() where TEntity : BaseEntity
-        {
-            if(_repostory == null)
-                _repostory = new Hashtable();
-
-            var type = typeof(TEntity).Name;
-            if (!_repostory.ContainsKey(type))
-            {
-                var repostoryType = typeof(genericRepostorycs<>);
-
-                var repostoryInstance = Activator.CreateInstance(repostoryType.MakeGenericType(typeof(TEntity)),_db);
-
-                _repostory.Add(type, repostoryInstance);
-            }
-
-            return (IGenericRepostory<TEntity>)_repostory[type];
-        }
     }
 }
