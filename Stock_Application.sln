@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stock_Application", "Stock_Application\Stock_Application.csproj", "{8853BCB8-CA95-4E04-9CED-DA280D470392}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stock_Application", "Stock_Application\Stock_Application.csproj", "{8853BCB8-CA95-4E04-9CED-DA280D470392}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{F0CBE6AB-F321-41DC-ADFE-89A1869CDDC5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{F0CBE6AB-F321-41DC-ADFE-89A1869CDDC5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastraction", "Infrastraction\Infrastraction.csproj", "{CA54222E-806B-4B4B-B9FC-FDFDD492CA9E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastraction", "Infrastraction\Infrastraction.csproj", "{CA54222E-806B-4B4B-B9FC-FDFDD492CA9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
